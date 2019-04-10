@@ -10,7 +10,6 @@ namespace WindowsFormsCalculator
     {
         private static WindowsFormsCalculatorPresenter _windowsFormsCalculatorPresenter;
         private static WindowsFormsCalculatorView _windowsFormsCalculatorView;
-        private static WindowsFormsCalculatorModel _windowsFormsCalculatorModel;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -19,8 +18,7 @@ namespace WindowsFormsCalculator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            _windowsFormsCalculatorModel = new WindowsFormsCalculatorModel();
-            _windowsFormsCalculatorPresenter = new WindowsFormsCalculatorPresenter(_windowsFormsCalculatorModel);
+            _windowsFormsCalculatorPresenter = new WindowsFormsCalculatorPresenter();
             _windowsFormsCalculatorView = new WindowsFormsCalculatorView(_windowsFormsCalculatorPresenter);
 
             Application.Run(_windowsFormsCalculatorView);
