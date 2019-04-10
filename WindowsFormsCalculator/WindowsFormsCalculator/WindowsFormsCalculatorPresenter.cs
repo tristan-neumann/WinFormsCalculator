@@ -9,7 +9,7 @@ namespace WindowsFormsCalculator
     public class WindowsFormsCalculatorPresenter
     {
 
-        private WindowsFormsCalculatorModel _windowsFormsCalculatorModel;
+        private readonly WindowsFormsCalculatorModel _windowsFormsCalculatorModel = new WindowsFormsCalculatorModel();
 
         private string _calcPartA = "";
         private string _calcPartB = "";
@@ -22,9 +22,9 @@ namespace WindowsFormsCalculator
             set;
         }
 
-        public WindowsFormsCalculatorPresenter(WindowsFormsCalculatorModel windowsFormsCalculatorModel)
+        public WindowsFormsCalculatorPresenter()
         {
-            _windowsFormsCalculatorModel = windowsFormsCalculatorModel;
+            
         }
 
         public void AddToVariable(string input)
