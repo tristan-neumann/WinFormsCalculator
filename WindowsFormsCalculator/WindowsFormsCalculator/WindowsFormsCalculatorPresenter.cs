@@ -11,9 +11,9 @@ namespace WindowsFormsCalculator
 
         private readonly WindowsFormsCalculatorModel _windowsFormsCalculatorModel = new WindowsFormsCalculatorModel();
 
-        private string _calcPartA = "";
-        private string _calcPartB = "";
-        private char _calcOperator;
+        public string CalcPartA = "";
+        public string CalcPartB = "";
+        public char CalcOperator;
         public bool JustClickedOperator { get; set; }
 
         public WindowsFormsCalculatorView WindowsFormsCalculatorView
@@ -31,21 +31,23 @@ namespace WindowsFormsCalculator
         {
             if (JustClickedOperator)
             {
-                _calcPartB += input.ToString();
+                CalcPartB += input.ToString();
                 WindowsFormsCalculatorView.textBoxOutput.Text += input.ToString();
             }
             else
             {
-                _calcPartA += input.ToString();
+                CalcPartA += input.ToString();
                 WindowsFormsCalculatorView.textBoxOutput.Text += input.ToString();
             }
         }
 
         public void ButtonEqual_Click()
         {
-            Interpret();
+            var result = Interpret();
             JustClickedOperator = false;
-            _calcPartA = WindowsFormsCalculatorView.textBoxOutput.Text;
+            CalcPartA = result;
+            WindowsFormsCalculatorView.textBoxOutput.Text = result;
+            Console.WriteLine(result);
             //            _calcPartB = "";
             //            _calcOperator = 'n';
         }
@@ -57,8 +59,8 @@ namespace WindowsFormsCalculator
                 ButtonEqual_Click();
             }
             JustClickedOperator = true;
-            _calcOperator = '+';
-            _calcPartB = "";
+            CalcOperator = '+';
+            CalcPartB = "";
             WindowsFormsCalculatorView.textBoxOutput.Text += "+";
         }
 
@@ -66,33 +68,33 @@ namespace WindowsFormsCalculator
         {
             if (JustClickedOperator)
             {
-                if (_calcPartB == "")
-                {
-                    _calcPartB += "-";
+//                if (CalcPartB == "")
+//                {
+                    CalcPartB += "-";
                     WindowsFormsCalculatorView.textBoxOutput.Text += "-";
-                }
-                else
-                {
-
-                    ButtonEqual_Click();
-                    _calcPartB = "";
-                    JustClickedOperator = true;
-                    _calcOperator = '-';
-                    WindowsFormsCalculatorView.textBoxOutput.Text += "-";
-                }
+//                }
+//                else
+//                {
+//
+//                    ButtonEqual_Click();
+//                    CalcPartB = "";
+//                    JustClickedOperator = true;
+//                    CalcOperator = '-';
+//                    WindowsFormsCalculatorView.textBoxOutput.Text += "-";
+//                }
             }
             else
             {
-                if (_calcPartA == "")
+                if (CalcPartA == "")
                 {
-                    _calcPartA += "-";
+                    CalcPartA += "-";
                     WindowsFormsCalculatorView.textBoxOutput.Text += "-";
                 }
                 else
                 {
                     JustClickedOperator = true;
-                    _calcOperator = '-';
-                    _calcPartB = "";
+                    CalcOperator = '-';
+                    CalcPartB = "";
                     WindowsFormsCalculatorView.textBoxOutput.Text += "-";
                 }
             }
@@ -103,11 +105,11 @@ namespace WindowsFormsCalculator
             if (JustClickedOperator)
             {
                 ButtonEqual_Click();
-                _calcPartB = "";
+                CalcPartB = "";
             }
             JustClickedOperator = true;
-            _calcOperator = '*';
-            _calcPartB = "";
+            CalcOperator = '*';
+            CalcPartB = "";
             WindowsFormsCalculatorView.textBoxOutput.Text += "*";
         }
 
@@ -116,11 +118,11 @@ namespace WindowsFormsCalculator
             if (JustClickedOperator)
             {
                 ButtonEqual_Click();
-                _calcPartB = "";
+                CalcPartB = "";
             }
             JustClickedOperator = true;
-            _calcOperator = '/';
-            _calcPartB = "";
+            CalcOperator = '/';
+            CalcPartB = "";
             WindowsFormsCalculatorView.textBoxOutput.Text += "/";
         }
 
@@ -129,57 +131,55 @@ namespace WindowsFormsCalculator
             WindowsFormsCalculatorView.textBoxOutput.Text = WindowsFormsCalculatorView.textBoxOutput.Text.Substring(0, WindowsFormsCalculatorView.textBoxOutput.TextLength - 1);
             if (JustClickedOperator)
             {
-                if (_calcPartB == "")
+                if (CalcPartB == "")
                 {
                     JustClickedOperator = false;
                 }
 
                 else
                 {
-                    _calcPartB = _calcPartB.Substring(0, _calcPartB.Length - 1);
+                    CalcPartB = CalcPartB.Substring(0, CalcPartB.Length - 1);
                 }
             }
             else
             {
-                _calcPartA = _calcPartA.Substring(0, _calcPartA.Length - 1);
+                CalcPartA = CalcPartA.Substring(0, CalcPartA.Length - 1);
             }
         }
 
         public void ButtonClear_Click()
         {
             JustClickedOperator = false;
-            _calcPartA = "";
-            _calcPartB = "";
-            _calcOperator = 'n';
+            CalcPartA = "";
+            CalcPartB = "";
+            CalcOperator = default(char);
             WindowsFormsCalculatorView.textBoxOutput.Text = "";
         }
 
-        public void Interpret()
+        public string Interpret()
         {
-            switch (_calcOperator)
+            switch (CalcOperator)
             {
                 case '+':
-                    WindowsFormsCalculatorView.textBoxOutput.Text =
-                        _windowsFormsCalculatorModel.sum(Double.Parse(_calcPartA), Double.Parse(_calcPartB)).ToString();
+                    return _windowsFormsCalculatorModel.sum(Double.Parse(CalcPartA), Double.Parse(CalcPartB)).ToString();
                     break;
                 case '-':
-                    WindowsFormsCalculatorView.textBoxOutput.Text =
-                        _windowsFormsCalculatorModel.subtract(Double.Parse(_calcPartA), Double.Parse(_calcPartB)).ToString();
+                    return _windowsFormsCalculatorModel.subtract(Double.Parse(CalcPartA), Double.Parse(CalcPartB)).ToString();
                     break;
                 case '*':
-                    WindowsFormsCalculatorView.textBoxOutput.Text =
-                        _windowsFormsCalculatorModel.multiply(Double.Parse(_calcPartA), Double.Parse(_calcPartB)).ToString();
+                    return _windowsFormsCalculatorModel.multiply(Double.Parse(CalcPartA), Double.Parse(CalcPartB)).ToString();
                     break;
                 case '/':
-                    WindowsFormsCalculatorView.textBoxOutput.Text =
-                        _windowsFormsCalculatorModel.divide(Double.Parse(_calcPartA), Double.Parse(_calcPartB)).ToString();
+                    return _windowsFormsCalculatorModel.divide(Double.Parse(CalcPartA), Double.Parse(CalcPartB)).ToString();
                     break;
+                default:
+                    return Double.Parse(CalcPartA).ToString();
             }
         }
 
-        public void parse(string input)
-        {
-            WindowsFormsCalculatorView.textBoxOutput.Text = _windowsFormsCalculatorModel.parse(input).ToString();
-        }
+//        public void parse(string input)
+//        {
+//            WindowsFormsCalculatorView.textBoxOutput.Text = _windowsFormsCalculatorModel.parse(input).ToString();
+//        }
     }
 }
