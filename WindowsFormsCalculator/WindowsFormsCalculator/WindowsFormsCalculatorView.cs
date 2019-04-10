@@ -13,9 +13,7 @@ namespace WindowsFormsCalculator
     public partial class WindowsFormsCalculatorView : Form
     {
         private readonly WindowsFormsCalculatorPresenter _windowsFormsCalculatorPresenter;
-        public string _calcPartA = "";
-        public string _calcPartB = "";
-        public char _calcOperator;
+
 
         public WindowsFormsCalculatorView(WindowsFormsCalculatorPresenter windowsFormsCalculatorPresenter)
         {
