@@ -46,9 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalcOperator.cs" />
+    <Compile Include="CalculatorArithmeticUnit.cs" />
     <Compile Include="CalculatorPresenter.cs" />
+    <Compile Include="ICalculatorArithmeticUnit.cs" />
     <Compile Include="ICalculatorPresenter.cs" />
     <Compile Include="ICalculatorView.cs" />
+    <Compile Include="INumberBuilder.cs" />
     <Compile Include="WindowsFormsCalculatorModel.cs" />
     <Compile Include="WindowsFormsCalculatorPresenter.cs" />
     <Compile Include="WindowsFormsCalculatorView.cs">
