@@ -181,7 +181,7 @@ namespace WindowsFormsCalculatorTests
             }
 
             [Test]
-            public void OnButtonEqualTwiceClickedTest()
+            public void OnButtonEqualClickedTwiceTest()
             {
                 _cut.OnButton2Clicked();
                 _cut.OnButtonEqualClicked();
