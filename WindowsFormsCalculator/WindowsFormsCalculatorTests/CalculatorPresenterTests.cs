@@ -284,7 +284,7 @@ namespace WindowsFormsCalculatorTests
             {
                 _cut.OnButton0Clicked();
                 _cut.OnButtonDecimalSeparatorClicked();
-                _calculatorViewMock.Verify(m => m.AppendToOutput(","));
+                _calculatorViewMock.Verify(m => m.AppendToOutput(NumberFormatInfo.CurrentInfo.NumberDecimalSeparator));
             }
         }
     }

@@ -77,7 +77,7 @@ namespace WindowsFormsCalculator
         {
             _numberBuilder.AddDecimalSeparator();
 
-            _calculatorView.AppendToOutput(",");
+            _calculatorView.AppendToOutput(NumberFormatInfo.CurrentInfo.NumberDecimalSeparator);
         }
 
         public void OnButtonPlusClicked()
