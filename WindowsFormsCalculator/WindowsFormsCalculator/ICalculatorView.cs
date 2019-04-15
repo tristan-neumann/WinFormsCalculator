@@ -10,5 +10,6 @@ namespace WindowsFormsCalculator
     {
         void SetOutput(string output);
         void AppendToOutput(string output);
+        void PrependToOutput(string output);
     }
 }

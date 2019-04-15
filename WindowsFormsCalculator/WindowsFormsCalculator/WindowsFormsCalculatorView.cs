@@ -119,5 +119,10 @@ namespace WindowsFormsCalculator
         {
             textBoxOutput.Text += output;
         }
+
+        public void PrependToOutput(string output)
+        {
+            textBoxOutput.Text = "-" + textBoxOutput.Text;
+        }
     }
 }
