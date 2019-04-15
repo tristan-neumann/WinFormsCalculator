@@ -72,7 +72,7 @@ namespace WindowsFormsCalculator
 
         private void buttonDot_Click(object sender, EventArgs e)
         {
-//            _windowsFormsCalculatorPresenter.AddToVariable(",");
+            _calculatorPresenter.OnButtonDecimalSeparatorClicked();
         }
 
         private void buttonEqual_Click(object sender, EventArgs e)
