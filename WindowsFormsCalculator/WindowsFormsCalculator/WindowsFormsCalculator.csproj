@@ -53,6 +53,7 @@
     <Compile Include="ICalculatorPresenter.cs" />
     <Compile Include="ICalculatorView.cs" />
     <Compile Include="INumberBuilder.cs" />
+    <Compile Include="NumberBuilder.cs" />
     <Compile Include="WindowsFormsCalculatorModel.cs" />
     <Compile Include="WindowsFormsCalculatorPresenter.cs" />
     <Compile Include="WindowsFormsCalculatorView.cs">
