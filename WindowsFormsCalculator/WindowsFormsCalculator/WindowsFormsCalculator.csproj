@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculatorPresenter.cs" />
     <Compile Include="ICalculatorPresenter.cs" />
     <Compile Include="ICalculatorView.cs" />
     <Compile Include="WindowsFormsCalculatorModel.cs" />
