@@ -27,6 +27,9 @@ namespace WindowsFormsCalculator
                 case CalcOperator.Empty:
                     Number = value;
                     break;
+                case CalcOperator.Negation:
+                    Number = -Number;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

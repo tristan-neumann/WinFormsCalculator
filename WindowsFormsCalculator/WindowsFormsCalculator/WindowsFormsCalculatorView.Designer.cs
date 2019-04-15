@@ -47,6 +47,7 @@
             this.buttonDividedBy = new System.Windows.Forms.Button();
             this.buttonClearLast = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonNegation = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxOutput
@@ -238,9 +239,21 @@
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
+            // buttonNegation
+            // 
+            this.buttonNegation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNegation.Location = new System.Drawing.Point(12, 218);
+            this.buttonNegation.Name = "buttonNegation";
+            this.buttonNegation.Size = new System.Drawing.Size(61, 39);
+            this.buttonNegation.TabIndex = 19;
+            this.buttonNegation.Text = "+/-";
+            this.buttonNegation.UseVisualStyleBackColor = true;
+            this.buttonNegation.Click += new System.EventHandler(this.buttonNegation_Click);
+            // 
             // WindowsFormsCalculatorView
             // 
             this.ClientSize = new System.Drawing.Size(285, 269);
+            this.Controls.Add(this.buttonNegation);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonClearLast);
             this.Controls.Add(this.buttonDividedBy);
@@ -287,6 +300,7 @@
         private System.Windows.Forms.Button buttonDividedBy;
         private System.Windows.Forms.Button buttonClearLast;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonNegation;
     }
 }
 

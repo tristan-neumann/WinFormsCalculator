@@ -2,6 +2,11 @@
 {
     public enum CalcOperator
     {
-        Plus, Minus, DividedBy, MultipliedBy, Empty
+        Empty,
+        Plus,
+        Minus,
+        DividedBy,
+        MultipliedBy,
+        Negation
     }
 }

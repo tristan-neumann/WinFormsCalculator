@@ -124,5 +124,10 @@ namespace WindowsFormsCalculator
         {
             textBoxOutput.Text = "-" + textBoxOutput.Text;
         }
+
+        private void buttonNegation_Click(object sender, EventArgs e)
+        {
+            _calculatorPresenter.OnButtonNegationClicked();
+        }
     }
 }

@@ -85,6 +85,16 @@ namespace WindowsFormsCalculator
             
         }
 
+        public void OnButtonNegationClicked()
+        {
+            if (_calculatorArithmeticUnit.Operation != CalcOperator.Negation)
+            {
+                CalculateResult();
+            }
+            _calculatorArithmeticUnit.Operation = CalcOperator.Negation;
+            CalculateResult();
+        }
+
         public void OnButtonPlusClicked()
         {
             CalculateResult();

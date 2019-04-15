@@ -20,6 +20,8 @@ namespace WindowsFormsCalculator
 
         void OnButtonDecimalSeparatorClicked();
 
+        void OnButtonNegationClicked();
+
         void OnButtonPlusClicked();
         void OnButtonMinusClicked();
         void OnButtonMultipliedByClicked();

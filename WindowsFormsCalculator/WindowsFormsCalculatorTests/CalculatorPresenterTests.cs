@@ -203,6 +203,31 @@ namespace WindowsFormsCalculatorTests
 
                 _calculatorViewMock.Verify(m => m.SetOutput("2" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "5"));
             }
+
+            [Test]
+            public void OnButtonNegationClickedTest()
+            {
+                _cut.OnButton2Clicked();
+                _cut.OnButton3Clicked();
+
+                _cut.OnButtonNegationClicked();
+                
+
+                _calculatorViewMock.Verify(m => m.SetOutput("-23"));
+            }
+
+            [Test]
+            public void OnButtonNegationClickedTest2()
+            {
+                _cut.OnButton2Clicked();
+                _cut.OnButton3Clicked();
+
+                _cut.OnButtonNegationClicked();
+                _cut.OnButtonNegationClicked();
+
+                
+                _calculatorViewMock.Verify(m => m.SetOutput("-23"));
+            }
         }
 
         [TestFixture]
@@ -329,6 +354,7 @@ namespace WindowsFormsCalculatorTests
 
                 _calculatorViewMock.Verify(m => m.AppendToOutput(NumberFormatInfo.CurrentInfo.NumberDecimalSeparator), Times.Once);
             }
+
         }
     }
 }
