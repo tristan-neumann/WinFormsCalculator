@@ -13,7 +13,6 @@ namespace WindowsFormsCalculator
             _calculatorView = calculatorView;
         }
 
-
         public void OnButton0Clicked()
         {
             _numberBuilder.AddDigit0();
