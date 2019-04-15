@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -156,6 +157,21 @@ namespace WindowsFormsCalculatorTests
                 _cut.OnButtonEqualClicked();
                 _calculatorViewMock.Verify(m => m.SetOutput("20"));
             }
+
+            [Test]
+            public void OnButtonDecimalSeparatorClickedTest()
+            {
+                _cut.OnButton2Clicked();
+                _cut.OnButtonDecimalSeparatorClicked();
+                _cut.OnButton5Clicked();
+
+                _cut.OnButtonMultipliedByClicked();
+                _cut.OnButton2Clicked();
+
+                _cut.OnButtonEqualClicked();
+
+                _calculatorViewMock.Verify(m => m.SetOutput("5"));
+            }
         }
 
         [TestFixture]
@@ -261,6 +277,14 @@ namespace WindowsFormsCalculatorTests
                 _cut.OnButton0Clicked();
                 _cut.OnButtonDividedByClicked();
                 _calculatorViewMock.Verify(m => m.AppendToOutput("/"));
+            }
+
+            [Test]
+            public void AppendOutputDecimalSeparatorTest()
+            {
+                _cut.OnButton0Clicked();
+                _cut.OnButtonDecimalSeparatorClicked();
+                _calculatorViewMock.Verify(m => m.AppendToOutput(","));
             }
         }
     }

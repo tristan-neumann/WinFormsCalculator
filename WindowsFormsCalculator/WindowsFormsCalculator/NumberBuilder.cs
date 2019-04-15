@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsCalculator
+﻿using System.Globalization;
+
+namespace WindowsFormsCalculator
 {
     public class NumberBuilder : INumberBuilder
     {
@@ -61,6 +63,11 @@
         {
             _numberString += 9;
 
+        }
+
+        public void AddDecimalSeparator()
+        {
+            _numberString += NumberFormatInfo.CurrentInfo.NumberDecimalSeparator;
         }
 
         public double BuildAndReset()

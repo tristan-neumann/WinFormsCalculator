@@ -73,6 +73,13 @@ namespace WindowsFormsCalculator
             _calculatorView.AppendToOutput("9");
         }
 
+        public void OnButtonDecimalSeparatorClicked()
+        {
+            _numberBuilder.AddDecimalSeparator();
+
+            _calculatorView.AppendToOutput(",");
+        }
+
         public void OnButtonPlusClicked()
         {
             CalculateResult();
