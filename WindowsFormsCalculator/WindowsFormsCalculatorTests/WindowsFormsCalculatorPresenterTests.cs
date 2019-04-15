@@ -18,7 +18,7 @@ namespace WindowsFormsCalculatorTests
         public void SetUp()
         {
             _cut = new WindowsFormsCalculatorPresenter();
-            _cut.WindowsFormsCalculatorView = new WindowsFormsCalculatorView(_cut);
+            _cut.WindowsFormsCalculatorView = new WindowsFormsCalculatorView();
         }
 
         public void ValueSetUp()

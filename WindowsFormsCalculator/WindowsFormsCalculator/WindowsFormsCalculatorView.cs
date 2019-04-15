@@ -10,118 +10,114 @@ using System.Windows.Forms;
 
 namespace WindowsFormsCalculator
 {
-    public partial class WindowsFormsCalculatorView : Form
+    public partial class WindowsFormsCalculatorView : Form, ICalculatorView
     {
-        private readonly WindowsFormsCalculatorPresenter _windowsFormsCalculatorPresenter;
+        private readonly ICalculatorPresenter _calculatorPresenter;
 
-
-        public WindowsFormsCalculatorView(WindowsFormsCalculatorPresenter windowsFormsCalculatorPresenter)
+        public WindowsFormsCalculatorView()
         {
-            _windowsFormsCalculatorPresenter = windowsFormsCalculatorPresenter;
-            _windowsFormsCalculatorPresenter.WindowsFormsCalculatorView = this;
-            _windowsFormsCalculatorPresenter.JustClickedOperator = false;
+            _calculatorPresenter = new  CalculatorPresenter(this);
             InitializeComponent();
         }
 
-        private void textBoxOutput_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void AddToVariable(int input)
-        {
-            _windowsFormsCalculatorPresenter.AddToVariable(input.ToString());
-        }
-        
-
         private void button0_Click(object sender, EventArgs e)
         {
-            AddToVariable(0);
+            _calculatorPresenter.OnButton0Clicked();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddToVariable(1);
+            _calculatorPresenter.OnButton1Clicked();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AddToVariable(2);
+            _calculatorPresenter.OnButton2Clicked();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AddToVariable(3);
+            _calculatorPresenter.OnButton3Clicked();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            AddToVariable(4);
+            _calculatorPresenter.OnButton4Clicked();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AddToVariable(5);
+            _calculatorPresenter.OnButton5Clicked();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            AddToVariable(6);
+            _calculatorPresenter.OnButton6Clicked();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            AddToVariable(7);
+            _calculatorPresenter.OnButton7Clicked();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            AddToVariable(8);
+            _calculatorPresenter.OnButton8Clicked();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            AddToVariable(9);
+            _calculatorPresenter.OnButton9Clicked();
         }
 
         private void buttonDot_Click(object sender, EventArgs e)
         {
-            _windowsFormsCalculatorPresenter.AddToVariable(",");
+//            _windowsFormsCalculatorPresenter.AddToVariable(",");
         }
 
         private void buttonEqual_Click(object sender, EventArgs e)
         {
-            _windowsFormsCalculatorPresenter.ButtonEqual_Click();
+           _calculatorPresenter.OnButtonEqualClicked();
         }
 
         private void buttonPlus_Click(object sender, EventArgs e)
         {
-            _windowsFormsCalculatorPresenter.ButtonPlus_Click();
+            _calculatorPresenter.OnButtonPlusClicked();
         }
 
         private void buttonMinus_Click(object sender, EventArgs e)
         {
-            _windowsFormsCalculatorPresenter.ButtonMinus_Click();
+            _calculatorPresenter.OnButtonMinusClicked();
         }
 
         private void buttonMultipliedBy_Click(object sender, EventArgs e)
         {
-           _windowsFormsCalculatorPresenter.ButtonMultipliedBy_Click();
+            _calculatorPresenter.OnButtonMultipliedByClicked();
         }
 
         private void buttonDividedBy_Click(object sender, EventArgs e)
         {
-           _windowsFormsCalculatorPresenter.ButtonDividedBy_Click();
+            _calculatorPresenter.OnButtonDividedByClicked();
         }
 
         private void buttonClearLast_Click(object sender, EventArgs e)
         {
-            _windowsFormsCalculatorPresenter.ButtonClearLast_Click();
+//            _windowsFormsCalculatorPresenter.ButtonClearLast_Click();
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            _windowsFormsCalculatorPresenter.ButtonClear_Click();
+//            _windowsFormsCalculatorPresenter.ButtonClear_Click();
+        }
+
+        public void SetOutput(string output)
+        {
+            textBoxOutput.Text = output;
+        }
+
+        public void AppendToOutput(string output)
+        {
+            textBoxOutput.Text += output;
         }
     }
 }

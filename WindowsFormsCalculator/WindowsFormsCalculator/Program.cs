@@ -19,7 +19,7 @@ namespace WindowsFormsCalculator
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             _windowsFormsCalculatorPresenter = new WindowsFormsCalculatorPresenter();
-            _windowsFormsCalculatorView = new WindowsFormsCalculatorView(_windowsFormsCalculatorPresenter);
+            _windowsFormsCalculatorView = new WindowsFormsCalculatorView();
 
             Application.Run(_windowsFormsCalculatorView);
         }
