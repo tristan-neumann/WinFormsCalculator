@@ -189,6 +189,20 @@ namespace WindowsFormsCalculatorTests
 
                 _calculatorViewMock.Verify(m => m.SetOutput("2"));
             }
+
+            [Test]
+            public void OnButtonDecimalSeparatorClickedTwiceTest()
+            {
+                _cut.OnButton2Clicked();
+                _cut.OnButtonDecimalSeparatorClicked();
+                _cut.OnButton5Clicked();
+
+                _cut.OnButtonDecimalSeparatorClicked();
+
+                _cut.OnButtonEqualClicked();
+
+                _calculatorViewMock.Verify(m => m.SetOutput("2" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "5"));
+            }
         }
 
         [TestFixture]
@@ -302,6 +316,18 @@ namespace WindowsFormsCalculatorTests
                 _cut.OnButton0Clicked();
                 _cut.OnButtonDecimalSeparatorClicked();
                 _calculatorViewMock.Verify(m => m.AppendToOutput(NumberFormatInfo.CurrentInfo.NumberDecimalSeparator));
+            }
+
+            [Test]
+            public void OnDecimalSeparatorClickedTwiceTest()
+            {
+                _cut.OnButton2Clicked();
+                _cut.OnButtonDecimalSeparatorClicked();
+                _cut.OnButton5Clicked();
+
+                _cut.OnButtonDecimalSeparatorClicked();
+
+                _calculatorViewMock.Verify(m => m.AppendToOutput(NumberFormatInfo.CurrentInfo.NumberDecimalSeparator), Times.Once);
             }
         }
     }

@@ -15,7 +15,9 @@ namespace WindowsFormsCalculator
         void AddDigit8();
         void AddDigit9();
 
-        void AddDecimalSeparator();
+        bool ContainsDecimalSeparator { get;  }
+
+        bool AddDecimalSeparator();
 
         double BuildAndReset();
     }

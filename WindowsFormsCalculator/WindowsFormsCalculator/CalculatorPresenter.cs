@@ -75,9 +75,14 @@ namespace WindowsFormsCalculator
 
         public void OnButtonDecimalSeparatorClicked()
         {
-            _numberBuilder.AddDecimalSeparator();
 
-            _calculatorView.AppendToOutput(NumberFormatInfo.CurrentInfo.NumberDecimalSeparator);
+
+            if (_numberBuilder.AddDecimalSeparator())
+            {
+                _calculatorView.AppendToOutput(NumberFormatInfo.CurrentInfo.NumberDecimalSeparator);
+            }
+
+            
         }
 
         public void OnButtonPlusClicked()
@@ -119,7 +124,7 @@ namespace WindowsFormsCalculator
 
             _calculatorArithmeticUnit.CalculateResult(number);
 
-            _calculatorView.SetOutput(_calculatorArithmeticUnit.Number.ToString(CultureInfo.InvariantCulture));
+            _calculatorView.SetOutput(_calculatorArithmeticUnit.Number.ToString(CultureInfo.CurrentCulture));
         }
     }
 }
