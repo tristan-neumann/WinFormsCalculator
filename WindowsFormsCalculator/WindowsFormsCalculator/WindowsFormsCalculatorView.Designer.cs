@@ -61,6 +61,7 @@
             // 
             // button0
             // 
+            this.button0.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button0.Location = new System.Drawing.Point(79, 220);
             this.button0.Name = "button0";
             this.button0.Size = new System.Drawing.Size(61, 39);
@@ -71,6 +72,7 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(12, 175);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(61, 39);
@@ -81,6 +83,7 @@
             // 
             // button2
             // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Location = new System.Drawing.Point(79, 175);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(61, 39);
@@ -91,6 +94,7 @@
             // 
             // button3
             // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Location = new System.Drawing.Point(146, 175);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(61, 39);
@@ -101,6 +105,7 @@
             // 
             // button4
             // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Location = new System.Drawing.Point(12, 130);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(61, 39);
@@ -111,6 +116,7 @@
             // 
             // button5
             // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Location = new System.Drawing.Point(79, 130);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(61, 39);
@@ -121,6 +127,7 @@
             // 
             // button6
             // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Location = new System.Drawing.Point(146, 130);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(61, 39);
@@ -131,6 +138,7 @@
             // 
             // button7
             // 
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button7.Location = new System.Drawing.Point(12, 85);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(61, 39);
@@ -141,6 +149,7 @@
             // 
             // button8
             // 
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.Location = new System.Drawing.Point(79, 85);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(61, 39);
@@ -151,6 +160,7 @@
             // 
             // button9
             // 
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.Location = new System.Drawing.Point(146, 85);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(61, 39);
@@ -161,6 +171,7 @@
             // 
             // buttonDot
             // 
+            this.buttonDot.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDot.Location = new System.Drawing.Point(146, 220);
             this.buttonDot.Name = "buttonDot";
             this.buttonDot.Size = new System.Drawing.Size(61, 39);
@@ -171,6 +182,7 @@
             // 
             // buttonEqual
             // 
+            this.buttonEqual.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEqual.Location = new System.Drawing.Point(213, 220);
             this.buttonEqual.Name = "buttonEqual";
             this.buttonEqual.Size = new System.Drawing.Size(61, 39);
@@ -181,6 +193,7 @@
             // 
             // buttonPlus
             // 
+            this.buttonPlus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPlus.Location = new System.Drawing.Point(213, 175);
             this.buttonPlus.Name = "buttonPlus";
             this.buttonPlus.Size = new System.Drawing.Size(61, 39);
@@ -191,6 +204,7 @@
             // 
             // buttonMinus
             // 
+            this.buttonMinus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonMinus.Location = new System.Drawing.Point(213, 130);
             this.buttonMinus.Name = "buttonMinus";
             this.buttonMinus.Size = new System.Drawing.Size(61, 39);
@@ -201,6 +215,7 @@
             // 
             // buttonMultipliedBy
             // 
+            this.buttonMultipliedBy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonMultipliedBy.Location = new System.Drawing.Point(213, 85);
             this.buttonMultipliedBy.Name = "buttonMultipliedBy";
             this.buttonMultipliedBy.Size = new System.Drawing.Size(61, 39);
@@ -211,6 +226,7 @@
             // 
             // buttonDividedBy
             // 
+            this.buttonDividedBy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDividedBy.Location = new System.Drawing.Point(213, 40);
             this.buttonDividedBy.Name = "buttonDividedBy";
             this.buttonDividedBy.Size = new System.Drawing.Size(61, 39);
@@ -221,6 +237,7 @@
             // 
             // buttonClearLast
             // 
+            this.buttonClearLast.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonClearLast.Location = new System.Drawing.Point(146, 40);
             this.buttonClearLast.Name = "buttonClearLast";
             this.buttonClearLast.Size = new System.Drawing.Size(61, 39);
@@ -231,6 +248,7 @@
             // 
             // buttonClear
             // 
+            this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonClear.Location = new System.Drawing.Point(79, 40);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(61, 39);
