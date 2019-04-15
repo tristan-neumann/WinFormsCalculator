@@ -172,6 +172,23 @@ namespace WindowsFormsCalculatorTests
 
                 _calculatorViewMock.Verify(m => m.SetOutput("5"));
             }
+
+            [Test]
+            public void OnButtonEqualClickedTest()
+            {
+                _cut.OnButtonEqualClicked();
+                _calculatorViewMock.Verify(m => m.SetOutput("0"));
+            }
+
+            [Test]
+            public void OnButtonEqualTwiceClickedTest()
+            {
+                _cut.OnButton2Clicked();
+                _cut.OnButtonEqualClicked();
+                _cut.OnButtonEqualClicked();
+
+                _calculatorViewMock.Verify(m => m.SetOutput("2"));
+            }
         }
 
         [TestFixture]

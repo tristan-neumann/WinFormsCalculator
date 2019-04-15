@@ -72,6 +72,11 @@ namespace WindowsFormsCalculator
 
         public double BuildAndReset()
         {
+            if (string.IsNullOrEmpty(_numberString))
+            {
+                return 0d;
+            }
+
             var number = double.Parse(_numberString);
             _numberString = string.Empty;
             return number;
